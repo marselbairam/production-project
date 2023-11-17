@@ -3,7 +3,7 @@ import React from 'react';
 import {useTheme} from "app/providers/ThemeProvider";
 import {classNames} from "shared/lib/classNames/classNames";
 
-import {Navbar} from "widgets";
+import {Navbar, Sidebar} from "widgets";
 import {AppRouter} from "app/providers/router";
 
 import './styles/index.scss';
@@ -14,7 +14,10 @@ const App = () => {
   return (
     <div className={classNames('app', {}, [theme])}>
       <Navbar />
-      <AppRouter />
+      <div className="content-page">
+        <Sidebar />
+        <AppRouter />
+      </div>
     </div>
   );
 };
