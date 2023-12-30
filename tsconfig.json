@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "strictNullChecks": true,
     "baseUrl": ".",
     "outDir": "./dist/",
     "noImplicitAny": true,
@@ -18,5 +19,9 @@
     "compilerOptions": {
       "module": "CommonJS"
     }
-  }
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": ["node_modules/"]
 }
