@@ -7,7 +7,8 @@ module.exports = {
   },
   extends: [
     'standard-with-typescript',
-    'plugin:react/recommended'
+    'plugin:react/recommended',
+    'plugin:i18next/recommended'
   ],
   overrides: [
     {
@@ -28,12 +29,14 @@ module.exports = {
   },
   plugins: [
     '@typescript-eslint',
-    'react'
+    'react',
+    'i18next'
   ],
   rules: {
     '@typescript-eslint/strict-boolean-expressions': 'warn',
     '@typescript-eslint/explicit-function-return-type': 'off',
     'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/no-floating-promises': 'off',
+    'i18next/no-literal-string': ['error', { markupOnly: true }]
   }
 }
