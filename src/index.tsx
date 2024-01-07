@@ -5,6 +5,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { ThemeProvider } from 'app/providers/ThemeProvider'
 
 import 'shared/config/i18n/i18n'
+import { ErrorBoundary } from 'app/providers/ErrorBoundary'
 
 const el = document.getElementById('root')
 if (el === null) throw new Error('Root container missing in index.html')
@@ -13,8 +14,10 @@ const root = ReactDOM.createRoot(el)
 
 root.render(
   <BrowserRouter>
-    <ThemeProvider>
-      <App />
-    </ThemeProvider>
+    <ErrorBoundary>
+      <ThemeProvider>
+        <App />
+      </ThemeProvider>
+    </ErrorBoundary>
   </BrowserRouter>
 )
